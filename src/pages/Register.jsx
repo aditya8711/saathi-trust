@@ -1,6 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import { registerUser } from "../api"; // ✅ import api function
 import "./form.css";
 
 export default function Register() {
@@ -14,11 +14,11 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/register", form);
+      await registerUser(form); // ✅ call api.js function
       alert("Registered successfully");
       navigate("/");
     } catch (err) {
-      alert("Registration failed. Please try again.");
+      alert(err.message || "Registration failed. Please try again.");
     }
   };
 
@@ -32,6 +32,7 @@ export default function Register() {
           <input
             name="name"
             placeholder="Full Name"
+            value={form.name}
             onChange={handleChange}
             required
           />
@@ -39,6 +40,7 @@ export default function Register() {
             name="email"
             type="email"
             placeholder="Email Address"
+            value={form.email}
             onChange={handleChange}
             required
           />
@@ -46,6 +48,7 @@ export default function Register() {
             name="password"
             type="password"
             placeholder="Create Password"
+            value={form.password}
             onChange={handleChange}
             required
           />
