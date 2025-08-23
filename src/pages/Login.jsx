@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { loginUser } from "../api";
+import { loginUser } from "../api"; 
 import "./form.css";
 
 export default function Login() {
@@ -14,15 +14,12 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data = await loginUser(form); 
-
-     
-      localStorage.setItem("token", data.token);
-
+      const res = await loginUser(form); 
+      localStorage.setItem("token", res.token);
       alert("Login successful!");
       navigate("/dashboard");
     } catch (err) {
-      alert(err.message || "Something went wrong");
+      alert("Login failed: " + err.message);
     }
   };
 
@@ -37,7 +34,6 @@ export default function Login() {
             name="email"
             type="email"
             placeholder="Email Address"
-            value={form.email}
             onChange={handleChange}
             required
           />
@@ -45,7 +41,6 @@ export default function Login() {
             name="password"
             type="password"
             placeholder="Password"
-            value={form.password}
             onChange={handleChange}
             required
           />
