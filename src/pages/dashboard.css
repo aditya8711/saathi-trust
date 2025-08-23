@@ -1,0 +1,111 @@
+/* 📘 Clean, gradient & trust-themed dashboard */
+
+.dashboard-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 2.5rem;
+  background: linear-gradient(to bottom, #f2f9ff, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 85, 255, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+  
+}
+
+
+.dashboard-logo {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+  border-radius: 6px; /* Agar tum logo ko thoda smooth edges dena chaho */
+}
+.dashboard-container h2 {
+  font-size: 30px;
+  color: #0d47a1;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-container p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+hr {
+  margin: 1.5rem 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.panel {
+  background-color: #ffffff;
+  border-left: 6px solid #1a73e8;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.panel:hover {
+  transform: scale(1.01);
+}
+
+.panel h3 {
+  font-size: 22px;
+  color: #0b3d91;
+  margin-bottom: 1rem;
+}
+
+.panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.panel ul li {
+  background: #f0f7ff;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #d3e3fc;
+}
+
+.panel button {
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.panel button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #1252a4, #0b3d91);
+}
+
+.panel-note {
+  font-style: italic;
+  color: #666;
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

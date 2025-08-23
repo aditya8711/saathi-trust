@@ -1,0 +1,59 @@
+.help-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #fdfdfd;
+  min-height: 80vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.help-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #003366;
+}
+
+.help-container p {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.faq-section {
+  background-color: #f1f7fc;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.faq {
+  margin-bottom: 1rem;
+}
+
+.faq h4 {
+  color: #004d80;
+  margin-bottom: 0.5rem;
+}
+
+.faq p {
+  color: #333;
+  margin-left: 1rem;
+}
+
+.contact-section {
+  text-align: center;
+  padding: 1rem;
+  background-color: #e6f3f9;
+  border-radius: 8px;
+}
+
+.email-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}

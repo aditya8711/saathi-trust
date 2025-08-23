@@ -1,0 +1,61 @@
+.admin-dashboard-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-dashboard-container h2 {
+  font-size: 28px;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.admin-dashboard-container p {
+  color: #475569;
+  margin-bottom: 2rem;
+}
+
+.admin-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.admin-card {
+  flex: 1 1 300px;
+  background: #f1f5f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 6px solid #2563eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.admin-card h3 {
+  font-size: 20px;
+  color: #1e293b;
+}
+
+.admin-card p {
+  color: #64748b;
+  margin: 8px 0 16px;
+}
+
+.admin-card button {
+  background: linear-gradient(to right, #2563eb, #1e40af);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-card button:hover {
+  background: linear-gradient(to right, #1e3a8a, #2563eb);
+  transform: translateY(-2px);
+}
