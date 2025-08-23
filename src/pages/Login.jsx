@@ -1,6 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import { loginUser } from "../api";
 import "./form.css";
 
 export default function Login() {
@@ -14,19 +14,15 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", form);
-      localStorage.setItem("token", res.data.token);
+      const data = await loginUser(form); 
+
+     
+      localStorage.setItem("token", data.token);
+
       alert("Login successful!");
       navigate("/dashboard");
     } catch (err) {
-      if (err.response?.status === 404) {
-        alert("Account not found. Please register.");
-        navigate("/register");
-      } else if (err.response?.status === 401) {
-        alert("Incorrect password!");
-      } else {
-        alert("Something went wrong. Try again later.");
-      }
+      alert(err.message || "Something went wrong");
     }
   };
 
@@ -41,6 +37,7 @@ export default function Login() {
             name="email"
             type="email"
             placeholder="Email Address"
+            value={form.email}
             onChange={handleChange}
             required
           />
@@ -48,6 +45,7 @@ export default function Login() {
             name="password"
             type="password"
             placeholder="Password"
+            value={form.password}
             onChange={handleChange}
             required
           />
